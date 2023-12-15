@@ -3,10 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	var expression string
+	var input string
 
-	fmt.Println("Enter expression for calculate: ")
-	fmt.Scan(&expression)
+	fmt.Print("Enter expression for calculate: ")
+	fmt.Scan(&input)
 
-	fmt.Println(expression)
+	exp, err := parseExp(input)
+	if err != nil {
+		return
+	}
+
+	result, err := exp.calculate()
+	if err != nil {
+		return
+	}
+
+	fmt.Printf("Result: %v\n", result)
 }
