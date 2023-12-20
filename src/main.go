@@ -1,22 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+)
 
 func main() {
-	var input string
+	reader := bufio.NewReader(os.Stdin)
 
-	fmt.Print("Enter expression for calculate: ")
-	fmt.Scan(&input)
-
-	exp, err := parseExp(input)
+	fmt.Print("Enter an expression: ")
+	expression, err := reader.ReadString('\n')
 	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+	expression = strings.Replace(expression, "\n", "", -1)
+
+	tokens, err := tokenize(expression)
+	if err != nil {
+		fmt.Println(err.Error())
 		return
 	}
 
-	result, err := exp.calculate()
-	if err != nil {
-		return
-	}
-
-	fmt.Printf("Result: %v\n", result)
+	fmt.Println(tokens)
 }
