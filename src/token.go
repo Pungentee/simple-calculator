@@ -23,6 +23,7 @@ type Token struct {
 	value     string
 }
 
+// return token type of character and error if it character is not valid
 func getTokenType(s string) (TokenType, error) {
 	switch s {
 	case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":

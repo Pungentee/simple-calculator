@@ -13,14 +13,20 @@ func main() {
 	fmt.Print("Enter an expression: ")
 	expression, err := reader.ReadString('\n')
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(err)
 		return
 	}
 	expression = strings.Replace(expression, "\n", "", -1)
 
 	tokens, err := tokenize(expression)
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println(err)
+		return
+	}
+
+	err = checkGrammaticalErrors(tokens)
+	if err != nil {
+		fmt.Println(err)
 		return
 	}
 
