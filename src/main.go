@@ -24,7 +24,7 @@ func main() {
 		return
 	}
 
-	err = checkGrammaticalErrors(tokens)
+	err = grammarCheck(tokens)
 	if err != nil {
 		fmt.Println(err)
 		return
