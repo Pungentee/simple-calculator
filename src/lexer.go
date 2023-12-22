@@ -47,7 +47,7 @@ func mergeNumbers(tokens []Token) []Token {
 
 			// while the token after the current one is a number, then adding it to the container. Else exit the loop
 			for j := 0; j < len(tokens[i:]); j++ {
-				if tokens[i:][j].tokenType == tokenTypes["number"] {
+				if tokens[i:][j].tokenType == tokenTypes["number"] || tokens[i:][j].tokenType == tokenTypes["dot"] {
 					container = append(container, tokens[i:][j])
 				} else {
 					break

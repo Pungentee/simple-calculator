@@ -14,6 +14,7 @@ var tokenTypes = map[string]TokenType{
 	"upArrow":      5,
 	"leftBracket":  6,
 	"rightBracket": 7,
+	"dot":          8,
 }
 
 type TokenType int
@@ -42,6 +43,8 @@ func getTokenType(s string) (TokenType, error) {
 		return tokenTypes["leftBracket"], nil
 	case ")":
 		return tokenTypes["rightBracket"], nil
+	case ".":
+		return tokenTypes["dot"], nil
 	}
 
 	return -1, errors.New(fmt.Sprintf("invalid token \"%s\"", s))
