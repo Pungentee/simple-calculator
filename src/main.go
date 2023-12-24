@@ -30,5 +30,7 @@ func main() {
 		return
 	}
 
-	fmt.Println(tokens)
+	result := calculate(tokens)
+
+	fmt.Println(result)
 }
