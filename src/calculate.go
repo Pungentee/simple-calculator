@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Pungentee/stack"
+	"github.com/Pungentee/simple-calculator/stack"
 	"strconv"
 )
 
