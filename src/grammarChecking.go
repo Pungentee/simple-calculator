@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"regexp"
 	"strings"
+
+	"github.com/Pungentee/simple-calculator/stack"
 )
 
 /*
@@ -30,7 +32,7 @@ closing bracket:
 */
 
 func grammarCheck(tokens []string) error {
-	var bracketsStack Stack[int] // contains an index of pairs
+	var bracketsStack stack.Stack[int] // contains an index of pairs
 	numRegEx, err := regexp.Compile("[+-]?[0-9]+[.]?[0-9]*([e][+-]?[0-9]+)?")
 	if err != nil {
 		return err
