@@ -32,5 +32,5 @@ func main() {
 
 	result := calculate(tokens)
 
-	fmt.Println(result)
+	fmt.Println("Result:", result)
 }
