@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"github.com/Pungentee/simple-calculator/stack"
+	"github.com/Pungentee/stack"
 	"regexp"
 	"strings"
 )
