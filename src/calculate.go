@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/Pungentee/stack"
 	"strconv"
 )
 
 func calculate(tokens []string) float64 {
-	var bracketsStack stack.Stack[int]
+	var bracketsStack Stack[int]
 	for contains(tokens, "(") {
 		for index, value := range tokens {
 			if value == "(" {
